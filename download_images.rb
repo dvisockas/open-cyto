@@ -1,7 +1,7 @@
 require 'httparty'
 require 'json'
 
-annotations = File.read('test.json').then(&JSON.method(:parse))
+annotations = File.read('data/annotations_dec.json').then(&JSON.method(:parse))
 annotations['images']
   .each do |image|
     File.open("data/images/#{image['file_name']}", "wb+") do |file|
